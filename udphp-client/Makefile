@@ -6,7 +6,6 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=udphp-client
-PKG_VERSION:=0.0.1
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=Almaz Gaifullin <gargargar@yandex.com>
@@ -16,7 +15,7 @@ PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/gargargar/udphp.git
 PKG_SOURCE_DATE:=2022-12-30
 PKG_SOURCE_VERSION:=e4ab512ab5ba3955fd5a23a76ffaae00f627ec3c
-PKG_MIRROR_HASH:=9e367d70ab1eead79b8119b8f86ad9d0d297038251d3ceac8f4a0fbf355d32a9
+PKG_MIRROR_HASH:=68ce9885b7fc1e10ff2afbe003dd65489d3e64ca0212914c513469e581127974
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -25,19 +24,12 @@ define Package/udphp-client
   CATEGORY:=Network
   TITLE:=UDP hole punching client
   URL:=https://github.com/gargargar/udphp
-  MAINTAINER:=Almaz Gaifullin <gargargar@yandex.com>
   DEPENDS:=+libstdcpp +libuuid
 endef
 
 define Package/udphp-client/description
- Client for udphp-server and UDP hole punching
+ UDP hole punching tool and client for signaling server udphp-server
 endef
-
-# define Build/Prepare
-# 	mkdir -p $(PKG_BUILD_DIR)
-# 	cp -r /home/almaz/projects/udphp/. $(PKG_BUILD_DIR)
-# 	$(Build/Patch)
-# endef
 
 MAKE_PATH = client
 MAKE_FLAGS += \
